@@ -74,3 +74,4 @@ target/
 
 .mypy_cache/
 _autogen/
+src/images/
