@@ -6,7 +6,7 @@ from utils.circledetector import CircleDetector
 # This is needed so that python can recognize the pyspix
 THIS_DIR = os.path.dirname(__file__)
 ROOT_DIR = os.path.abspath(os.path.join(THIS_DIR, ".."))
-IMAGES_DIR = f"{ROOT_DIR}\\src\\images\\"
+IMAGES_DIR = f"{ROOT_DIR}/src/images/"
 
 try:
     os.makedirs(IMAGES_DIR)
@@ -54,11 +54,11 @@ def value_within_range(actual_v, expected_v, tolerance):
 )
 def test_corner_hue(d, hue, expected_r, expected_hsv, r_tolerance, h_tolerance):
 
-    _, _, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    _, _, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == 0
 
-    img_path = cv.imread(f"{IMAGES_DIR}\\test.png")
+    img_path = cv.imread(f"{IMAGES_DIR}/test.png")
     circle = CircleDetector(img_path=img_path, circle_hue=hue)
 
     # assert the circle radius
@@ -80,11 +80,11 @@ def test_corner_hue(d, hue, expected_r, expected_hsv, r_tolerance, h_tolerance):
 )
 def test_acceptable_corner_d(d, hue, expected_r, expected_hsv, r_tolerance, h_tolerance):
 
-    _, _, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    _, _, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == 0
 
-    img_path = cv.imread(f"{IMAGES_DIR}\\test.png")
+    img_path = cv.imread(f"{IMAGES_DIR}/test.png")
     circle = CircleDetector(img_path=img_path, circle_hue=hue)
 
     # assert the circle radius
@@ -106,11 +106,11 @@ def test_acceptable_corner_d(d, hue, expected_r, expected_hsv, r_tolerance, h_to
 )
 def test_unacceptable_corner_d(d, hue, expected_result):
 
-    _, _, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    _, _, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == 0
 
-    img_path = cv.imread(f"{IMAGES_DIR}\\test.png")
+    img_path = cv.imread(f"{IMAGES_DIR}/test.png")
     circle = CircleDetector(img_path=img_path, circle_hue=hue)
 
     # assert the circle doesn't exist
@@ -129,11 +129,11 @@ def test_unacceptable_corner_d(d, hue, expected_result):
 )
 def test_odd_even_values(d, hue, expected_r, expected_hsv, r_tolerance, h_tolerance):
 
-    _, _, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    _, _, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == 0
 
-    img_path = cv.imread(f"{IMAGES_DIR}\\test.png")
+    img_path = cv.imread(f"{IMAGES_DIR}/test.png")
     circle = CircleDetector(img_path=img_path, circle_hue=hue)
 
     # assert the circle radius

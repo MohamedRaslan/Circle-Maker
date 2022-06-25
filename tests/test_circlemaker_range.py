@@ -6,7 +6,7 @@ from utils.circledetector import CircleDetector
 # This is needed so that python can recognize the pyspix
 THIS_DIR = os.path.dirname(__file__)
 ROOT_DIR = os.path.abspath(os.path.join(THIS_DIR, ".."))
-IMAGES_DIR = f"{ROOT_DIR}\\src\\images\\"
+IMAGES_DIR = f"{ROOT_DIR}/src/images/"
 
 try:
     os.makedirs(IMAGES_DIR)
@@ -36,7 +36,7 @@ def capture(command):
 )
 def test_d_out_of_range(d, hue, expected_result):
 
-    out, err, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    out, err, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == expected_result[0]
     assert expected_result[1] in str(err)
@@ -53,7 +53,7 @@ def test_d_out_of_range(d, hue, expected_result):
 )
 def test_hue_out_of_range(d, hue, expected_result):
 
-    out, err, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    out, err, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == expected_result[0]
     assert expected_result[1] in str(err)
@@ -69,7 +69,7 @@ def test_hue_out_of_range(d, hue, expected_result):
 )
 def test_both_out_of_range(d, hue, expected_result):
 
-    out, err, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    out, err, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == expected_result[0]
     assert expected_result[1] in str(err)
@@ -85,7 +85,7 @@ def test_both_out_of_range(d, hue, expected_result):
 )
 def test_both_on_range(d, hue, expected_result):
 
-    out, err, returncode = capture(f"python {ROOT_DIR}\\src\\circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}\\test.png")
+    out, err, returncode = capture(f"python {ROOT_DIR}/src/circlemaker.py -d {d} -hue {hue} -path {IMAGES_DIR}/test.png")
 
     assert returncode == expected_result[0]
     assert expected_result[1] in str(err)
