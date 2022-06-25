@@ -13,7 +13,7 @@ PACKAGE_AUTHOR_EMAIL = "MohamedRaslanG@gmail.com"
 PACKAGE_REPO_URL = "https://github.com/MohamedRaslan/Circle-Maker"
 PACKAGE_DESCRIPTION = "Circle-Maker is a command line application that generates a circle on a 400x400px canvas with a 1px border around it."
 
-with open("README.md", "r", encoding="utf-8") as fh:
+with open("readme.md", "r", encoding="utf-8") as fh:
     LONG_DESCRIPTION = fh.read()
 
 LONG_DESC_TYPE = "text/markdown"
