@@ -6,7 +6,7 @@ from utils.circledetector import CircleDetector
 # This is needed so that python can recognize the pyspix
 THIS_DIR = os.path.dirname(__file__)
 ROOT_DIR = os.path.abspath(os.path.join(THIS_DIR, ".."))
-IMAGES_DIR = f"{ROOT_DIR}/src/images/"
+IMAGES_DIR = f"{ROOT_DIR}/src/images"
 
 try:
     os.makedirs(IMAGES_DIR)
