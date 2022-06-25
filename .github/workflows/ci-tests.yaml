@@ -19,12 +19,12 @@ jobs:
       with:
         python-version: 3.8
 
-    - name: Generate coverage report
+    - name: Run the tests
       run: |
         python -m pip install -e .[dev]
         python -m pytest
 
-    - name: Publish the reports on GitHub
+    - name: Publish the reports to GitHub
       uses: actions/upload-artifact@v2
       if: ${{ always()}}
       with:
