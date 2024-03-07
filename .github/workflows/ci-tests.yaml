@@ -13,9 +13,9 @@ jobs:
       OS: ${{ matrix.os }}
       PYTHON: '3.8'
     steps:
-    - uses: actions/checkout@master
+    - uses: actions/checkout@v4
     - name: Setup Python
-      uses: actions/setup-python@master
+      uses: actions/setup-python@v5
       with:
         python-version: 3.8
 
@@ -25,8 +25,8 @@ jobs:
         python -m pytest
 
     - name: Publish the reports to GitHub
-      uses: actions/upload-artifact@v2
-      if: ${{ always()}}
+      uses: actions/upload-artifact@v4
+      if: ${{ always() }}
       with:
         name: ciclemaker-${{ matrix.os }}-reports-${{ github.sha }}
         path: |
