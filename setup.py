@@ -20,7 +20,7 @@ LONG_DESC_TYPE = "text/markdown"
 
 
 PKG_REQUIREMENTS = [
-    "Pillow == 10.2.0",
+    "Pillow == 10.3.0",
 ]
 
 DEV_REQUIREMENTS = [
