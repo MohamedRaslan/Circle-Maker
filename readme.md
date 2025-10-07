@@ -4,13 +4,13 @@
 
 # Circle-Maker
 
-Circle-Maker is a command line application that generates a circle on a 400x400px canvas with a 1px border around it.
+Circle-Maker is a command-line application that generates a circle on a 400x400px canvas with a 1px border around it.
 
 
 ## Features
 
-Circle-Maker is a command line application that generates a circle on a 400x400px canvas with a 1px border
-around it. Size and color of the circle can be set via command line arguments, thickness of the border is fixed and
+Circle-Maker is a command-line application that generates a circle on a 400x400px canvas with a 1px border
+around it. Size and color of the circle can be set via command line arguments, the thickness of the border is fixed and
 cannot be changed, however color of the border is random and changes on every application launch.
 
 ## Installation
@@ -42,15 +42,15 @@ Contributions are very welcome.
 
 ## Development
 
-To start development, and run test:
+To start development and run tests:
 
-run your python environment then run the following commands:
+Run your Python environment, then run the following commands:
 
 ```shell
-# Update pip, wheel and setuptools
+# Update pip, wheel, and setuptools
 python -m pip install -U pip wheel setuptools
 
-# Instal all the needed dependencies
+# Install all the needed dependencies
 pip install -e .[dev]
 
 # Run test
@@ -61,18 +61,19 @@ You can check the generated report on the terminal or on the `_autogen` folder
 
 
 ## Assumptions and Limitations
-Listed below a list of my Assumptions/statements and enhancements:
+Listed below are a list of my Assumptions/statements and enhancements:
 
-- Statements: I didn't use or found a ready to use tool to make me able to detect circles in the image, so I tried to create a way to detect this using CV2 "Disclaimer: despite that all of the code in this repo is done be me and me only a fet of the work came by searching google for a detecting circles , trial & error , troubleshooting and tuning .. so it's not an elegant solution, but work very well with the current situation of the `Circle-Maker` app".
+- Statements: I didn't use or found a ready to use tool to make me able to detect circles in the image, so I tried to create a way to detect this using CV2 "Disclaimer: despite that all of the code in this repo is done by me and me only a lot of the work came by searching google for a detecting circles, trial & error, troubleshooting and tuning .. so it's not an elegant solution, but work very well with the current situation of the `Circle-Maker` app".
 
-- Assumptions: The circle detector will work very well under the following assumptions "but note that some circle detection methods may be able to work outside the following assumption or with few modifcations":
+- Assumptions: The circle detector will work very well under the following assumptions, "but note that some circle detection methods may be able to work outside the following assumption or with few modifications":
   - The circle will have only one color
   - The circle center is always the center of the image
-  - The scope of testing is the circle so I can ignore the border of the image.
+  - The scope of testing is the circle, so I can ignore the border of the image.
 
-- Limitations: There are some limitation with my circle detectors "there are three implemented methods of detecting the circle each method list its limitation under it and only the best one used for detection" but generally
-  - Circles with diameter less than 5px can't be detected properly so unfortunately I ignored them as treated them as not exist.
+- Limitations: There are some limitations with my circle detectors. "There are three implemented methods of detecting the circle, each method lists its limitation under it, and only the best oneis  used for detection," but generally
+  - Circles with a diameter less than 5px can't be detected properly, so unfortunately, I ignored them and treated them as not existing.
 
 - Enhancements: In the `circlemaker.py` in the `src` folder, to make the circle does not overlap with the image border
-  - The `-d` - diameter of the circle should be within [0 (400-2)] "[0 398]" not [0 399] as the border takes 1px on wach side so the boarder takes about 2 pixels.
+  - The `-d` - diameter of the circle should be within [0 (400-2)] "[0 398]", not [0 399] as the border takes 1px on each side, so the border takes about 2 pixels.
+
 
